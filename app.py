@@ -50,7 +50,7 @@ def vect(text):
 
 
 
-st = convert("hello sommeran whats up bro !!! lets grab some drink, how you doing?")
+st = convert("hello sommeran whats up !!! lets grab some drink, how you doing?")
 print(st)
 print(vect(st))
 print(type(vector))
