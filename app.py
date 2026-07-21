@@ -13,8 +13,10 @@ model = pickle.load(open("model.pkl", "rb"))
 vector = pickle.load(open("vectorizer.pkl", "rb"))
 
 
-nltk.download("punkt")
-nltk.download("stopwords")
+nltk.download("punkt", quiet=True)
+nltk.download("punkt_tab", quiet=True)
+nltk.download("stopwords", quiet=True)
+
 
 stpword = set(stopwords.words('english'))
 
