@@ -7,11 +7,14 @@ import numpy as np
 import pandas as pd
 from nltk.stem.porter import PorterStemmer
 
-ps = PorterStemmer()
+ps = PorterStemmer()    
 
 model = pickle.load(open("model.pkl", "rb"))
 vector = pickle.load(open("vectorizer.pkl", "rb"))
 
+
+nltk.download("punkt")
+nltk.download("stopwords")
 
 stpword = set(stopwords.words('english'))
 
