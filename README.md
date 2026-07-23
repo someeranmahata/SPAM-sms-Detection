@@ -109,3 +109,21 @@ To classify a new SMS:
 1. Clean and stem the text using the same pre-processing pipeline described above
 2. Transform it with the saved `vectorizer.pkl`
 3. Call `model.predict()` on the result
+
+## Web Application
+
+The trained model was deployed as an interactive web application using **Flask**.
+
+### Workflow
+1. Load the trained **Random Forest** model (`model.pkl`) and the **TF-IDF Vectorizer** (`vectorizer.pkl`) using `pickle`.
+2. Accept user input through a simple HTML interface.
+3. Apply the same preprocessing pipeline used during training:
+   - Convert text to lowercase
+   - Tokenize the message
+   - Remove punctuation and stopwords
+   - Apply Porter Stemming
+4. Transform the processed text using the saved TF-IDF vectorizer.
+5. Pass the transformed features to the trained model for prediction.
+6. Display whether the input message is **Spam** or **Ham**.
+
+This ensures that the preprocessing and feature extraction performed during inference are identical to those used while training the model, resulting in consistent and reliable predictions.
